@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title> EMI calculate</title>
+</head>
+
+<body>
+    <h1>EMI calculate</h1>
+    <script>
+
+        // var firstName =  'testing';
+        // console.log(`here is the ${firstName}`);
+
+        var loanAmount = 200000; // Loan  amount
+
+        var interestRate = 9; // Intrest rate per year
+
+        var tensure = 24; // No of month
+
+        var calMonthlyIntAmt;
+        var perMonthEMI;
+        var totalPaidAmount;
+        var totalPaidInterest;
+
+        calMonthlyIntAmt = interestRate / 12 / 100; // Rate of interset per month
+
+        perMonthEMI = [loanAmount * calMonthlyIntAmt * (1 + calMonthlyIntAmt) ** tensure] / [(1 + calMonthlyIntAmt) ** tensure - 1];
+
+        totalPaidAmount = perMonthEMI * tensure;
+
+        totalPaidInterest = totalPaidAmount - loanAmount;
+
+        console.log(`your per month interset rate  ${calMonthlyIntAmt}`);
+        console.log(`your per month loan EMI  ${perMonthEMI}`);
+        console.log(`total paid amount with interset  ${totalPaidAmount}`);
+        console.log(`total paid interset  ${totalPaidInterest}`);
+
+    </script>
+</body>
+
+</html>
